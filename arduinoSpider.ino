@@ -146,7 +146,14 @@ void loop()
   cm = (temp*17)/1000;
 
   Serial.println(cm);
-  delay(100);
+
+  if (cm < 10) {
+    Serial.println("====Turn right====");
+    turn_right(10);
+  } else {
+    Serial.println("====Step forward====");
+    step_forward(5);
+  }
 
 /*  Serial.println("====Stand====");
   stand();
